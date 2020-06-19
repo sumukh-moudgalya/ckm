@@ -1,0 +1,149 @@
+{%extends 'html/base.html'%}
+{%load static%}
+
+{% block body_block%}
+<h1 style="padding:6vw;text-align:center;">Chikmagaluru offers unique variety of hotesl ranging from sophisticated cafes to traditional south indian hotels</h1>
+{% for hotel in hotel_list%}
+<div class="box">
+  <h1>{{hotel.rank}} : {{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
+</h1>
+  <div  class="card 2">
+    <div class="card_image">
+      <img style="width:60vw;height:40vw;" src="{{hotel.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+  <h5>{{hotel.desc}}</h5>
+
+  <div style="padding-bottom:18vw;" class="loop">
+    <div id="left">
+
+  <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+
+    </div>
+    <div id="right">
+     <a href="{{hotel.id}}" class="style-1">Read More</a>
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+  {%endfor%}
+
+</div>
+
+
+
+
+
+<style media="screen">
+.box{
+  margin:40px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+}
+.cards-list {
+z-index: 0;
+width: 100%;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.card {
+margin: 30px auto;
+width: 60vw;
+height: inherit;
+border-radius: 10px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+cursor: pointer;
+background-color: black;
+transition: 0.4s;
+}
+
+.card .card_image {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+}
+
+.card .card_image img {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.card .card_title {
+text-align: center;
+border-radius: 0px 0px 40px 40px;
+
+font-weight: bold;
+font-size: 30px;
+margin-top: -80px;
+height: 40px;
+}
+
+.card:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+color: white;
+}
+
+.title-black {
+color: black;
+}
+
+@media all and (max-width: 500px) {
+.card-list {
+/* On small screens, we are no longer using row direction but column */
+flex-direction: column;
+}
+}
+.loop{
+  width:100%;
+
+}
+#left{
+  float:left;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+#left:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+#right{
+  float:right;
+}
+.style-1 {
+  border:3px solid white;
+  color:white;
+
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
+}
+.style-1:hover {
+  background:#000;
+  border-color:white;
+  color:#fff;
+}
+</style>
+{%endblock%}

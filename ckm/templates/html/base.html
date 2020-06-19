@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <!-- bootstrap link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- google font link -->
+<link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
+
+<!-- custom link -->
+  <link rel="stylesheet" href="{%static 'css/base.css'%}">
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+
+
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: transparent!important;">
+      <a style="color:white;" class="navbar-brand bigbrand" href="{%url 'basicapp:home_view'%}">CKM</a>
+      <button style="border-color:white;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a style="margin-left:50px;color:white;" class="nav-link" href="{% url 'basicapp:explores_list_view'%}">Explore places</a>
+              </li>
+              <li class="nav-item active">
+                <a style="margin-left:50px;color:white;" class="nav-link" href="{% url 'basicapp:hotels_list_view'%}">Hotels and Cafe</a>
+              </li>
+              <li class="nav-item active">
+                <a style="margin-left:50px;color:white;" class="nav-link" href="www.netflix.com">Homestays</a>
+              </li>
+              <li class="nav-item active">
+                <a style="margin-left:50px;color:white;" class="nav-link" href="www.netflix.com">Malnad Specials</a>
+              </li>
+
+            </ul>
+
+          <a href="#" style="color:white;">Contact Us</a>
+          </div>
+</nav>
+    {%block body_block%}
+
+    {%endblock%}
+
+    <div  class="footer">
+      <div style="    border-radius: 10px;
+        box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(255,255,255,0.22);" class="footer-content">
+        <div style="padding-top:20px;padding-left:20px;" id="left1">
+          <p>About</p>
+          <p>The main aim of our page is to help you discover the beauty of nature in chikmagalur.Help you have a hassle free trip by organising your trips.Make the world see the beauty of malnad culture </p>
+        </div>
+        <div style="padding-top:20px;" id="left2">
+          <p><a href="https://www.facebook.com/Chikkamagalure/"<i class="fa fa-facebook" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Like us on facebook</p>
+          <p ><a href="https://www.instagram.com/chikamagalur_theland_of_hills/?igshid=1d9eqz8jdliq4"<i class="fa fa-instagram" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on Instagam</p>
+          <p><a href="https://www.youtube.com/channel/UChefcw3OEZqNxxLcaUzu73Q"<i class="fa fa-youtube" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Subscribe our channel on Youtube</p>
+          <p><a href="https://twitter.com/Chikkamagaluru1?s=09"<i class="fa fa-twitter" style="font-size:36px;color:white;padding-right:10px;"></i> </a> Follow us on twitter</p>
+
+        </div>
+        <div id="right">
+
+
+
+        </div>
+        <h4>Contact Us</h4>
+        <p><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-8277062747</p>
+        <p><i class="fa fa-phone" style="font-size:36px;color:white;padding-right:10px;"></i> +91-6362755594</p>
+        <h4>Mail us :</h4>
+        <p><a href="https://mail.google.com/"<i class="fa fa-envelope" style="font-size:24px;color:white;padding:0px;margin:0px;width:30px;height:25px;padding-right:10px;"></i></a>chikkamagaluruthelandofhills@gmail.com</p>
+
+
+
+
+      </div>
+
+
+    </div>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p><p style="padding-left:40%;padding-right:40%;text-align:center;" >< > with<i style="font-size:20px;" class="fa fa-heart "></i>by Ckm and team</p></p>
+
+
+
+
+
+
+    <style media="screen">
+      body{
+        background-image: linear-gradient(to right,#181818,rgb(20,20,20));
+        font-family: 'MuseoModerno', cursive;
+        color:white;
+      }
+      .footer-content{
+        width:100%;
+        padding: 40px;
+
+      }
+      #left1{
+        width:36%;
+        padding:10px;
+        padding-right:15px;
+        margin: 10px;
+        float:left;
+      }
+      #left2{
+        width: 36%;
+        padding: 10px;
+        float: left;
+      }
+      #right{
+        width: 24%;
+      }
+
+      #right{
+
+        padding:10px;
+        float: right;
+      }
+    </style>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>

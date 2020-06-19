@@ -1,0 +1,236 @@
+{%extends 'html/base.html'%}
+{%load static%}
+
+
+{%block body_block%}
+<section id="home_">
+  <div style="background-image:url({%static 'images/home_1.jpg'%})"   class="welcome text-dark" >
+    <p >CHIKMAGALURU<p>
+    <h2 style="font-size:4vw;color:white;">The land of hills!</h2>
+    <h2 style="color:white;">Escape the ordinary, explore the divinity of nature in the coffee land </h3>
+  </div>
+
+</section>
+
+<div class="container">
+  <p style="color:white;font-size:x-large;padding-top:10px;padding-bottom:12px;text-align:center;">Explore various attractions and the beauty of nature here</p>
+
+</div>
+
+
+
+<div class="cards-list">
+
+
+
+  <div class="card 1">
+  <div class="card_image">
+    <a href="#"><img style="width:300px;height:400px;" src="{% static 'images/homestay.jpg'%}" /></a>
+
+    </div>
+  <div class="card_title title-white">
+    <p>Homestays</p>
+  </div>
+</div>
+<div  class="card 2">
+  <div class="card_image">
+    <a href="{%url 'basicapp:explores_list_view'%}"><img  style="width:300px;height:400px;" src="{% static 'images/mulla.jpg'%}" /></a>
+   </div>
+  <div class="card_title title-white">
+    <p>Explore places</p>
+  </div>
+</div>
+
+<div class="card 3">
+  <div class="card_image">
+    <a href="{% url 'basicapp:hotels_list_view'%}"><img style="width:300px;height:400px;" src="{% static 'images/coffee.jpg' %}" /></a>
+
+  </div>
+  <div class="card_title">
+    <p>Cafe and hotels</p>
+  </div>
+</div>
+
+  <div class="card 4">
+  <div class="card_image">
+    <a href="#"><img style="width:300px;height:400px;" src="{% static 'images/attractions.jfif'%}" /></a>
+
+    </div>
+  <div class="card_title title-white">
+    <p>Malnad Specials</p>
+  </div>
+  </div>
+
+</div>
+
+
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 style="text-align:center;" class="display-4">What do we offer?</h1>
+    <p id="middle"  class="lead">The info about all the places in chikmagalur can be found </p>
+    <p id="middle" class="lead">The unique aspects that chikmagalur has to offer,in finding the hidden places that only few know about</p>
+    <p id="middle" class="lead">The restaurant recomendations,hotel bookings,the homestay bookings</p>
+    <p id="middle" class="lead">We help you in booking of your trip</p>
+  </div>
+  <p style="text-align:center;" ><a href="https://www.facebook.com/Chikkamagalure/"<i id="fb" class="fa fa-facebook" style="font-size:36px;color:white;padding-right:10px;margin:20px;"></i> </a>  <a href="https://www.instagram.com/chikamagalur_theland_of_hills/?igshid=1d9eqz8jdliq4"<i id="in" class="fa fa-instagram" style="font-size:34px;color:white;"></i> </a>  <a href="https://www.youtube.com/channel/UChefcw3OEZqNxxLcaUzu73Q"<i id="yt" class="fa fa-youtube" style="font-size:36px;color:white;padding-right:10px;margin:20px;"></i> </a> <a id="tw" href="https://twitter.com/Chikkamagaluru1?s=09"<i class="fa fa-twitter" style="font-size:36px;color:white;padding-right:10px;margin:0px;"></i> </a></p>
+</div>
+
+
+
+
+
+
+
+
+
+<style media="screen">
+
+.welcome{
+            padding:15% 2%;
+              width:100%;
+              height:fill;
+              padding-left:middle;
+              text-align: center;
+              color:black;
+              background-size: cover;
+          }
+.welcome p{
+  font-size:10vw;
+  color:black;
+}
+
+
+          .cards-list {
+      z-index: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      margin: 30px auto;
+      width: 300px;
+      height: 400px;
+      border-radius: 10px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+      cursor: pointer;
+      background-color: black;
+      transition: 0.4s;
+    }
+
+    .card .card_image {
+      width: inherit;
+      height: inherit;
+      border-radius: 10px;
+    }
+
+    .card .card_image img {
+      width: inherit;
+      height: inherit;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .card .card_title {
+      text-align: center;
+      border-radius: 0px 0px 40px 40px;
+
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: -80px;
+      height: 40px;
+    }
+
+    .card:hover {
+      transform: scale(0.9, 0.9);
+      box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+        -5px -5px 30px 15px rgba(0,0,0,0.22);
+    }
+
+    .title-white {
+      color: white;
+    }
+
+    .title-black {
+      color: black;
+    }
+
+    @media all and (max-width: 500px) {
+      .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+      }
+    }
+
+    .offer{
+
+
+      padding:15% 2%;
+        width:100%;
+        height:fill;
+        padding-left:middle;
+        text-align: center;
+        color:black;
+        background-size: cover;
+        box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+          -5px -5px 30px 15px rgba(0,0,0,0.22);
+          background-color: #393E46;
+    }
+    .box{
+      box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+        -5px -5px 30px 15px rgba(0,0,0,0.22);
+        margin:25px;
+
+
+    }
+    .jumbotron{
+    background-image: url({%static 'images/down.jpg'%});
+    content: fill;
+      margin:40px;
+      box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+        -5px -5px 30px 15px rgba(0,0,0,0.72);
+          border-radius: 10px;
+
+    }
+.jumbotron .container p{
+  text-align: center;
+}
+.fa {
+
+  font-size: 30px;
+  width: 50px;
+  height:50px;
+  padding:10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.faa:hover {
+    opacity: 0.7;
+}
+#fb{
+  background: #3B5998;
+  color: white;
+}
+#tw {
+  background: #55ACEE;
+  color: white;
+}
+#yt {
+  background: #bb0000;
+  color: white;
+}
+#in {
+  background: #125688;
+  color: white;
+}
+
+
+
+
+
+</style>
+
+{%endblock%}

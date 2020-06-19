@@ -1,0 +1,157 @@
+{%extends 'html/base.html'%}
+{%load static%}
+
+
+{%block body_block%}
+<div class="box">
+
+  <h1 style="text-align:center;">{{place_detail.name}}</h1>
+  <div  class="card 2">
+    <div class="card_image">
+      <img style="width:80vw;" src="{{place_detail.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+  <h5 style="padding:20px;">{{place_detail.desc}}</h5>
+  <h5 style="padding:20px;">{{place_detail.short_desc}}</h5>
+  <div class="side">
+    <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
+      <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+  <iframe style="align:center;margin:40px;" src="{{place_detail.google_map_html}}" width="100%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a style="text-align:center;" href="{{place_detail.google_map_link}}" class="style-1">Go to Google Map</a>
+</div>
+<div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
+  <div  class="container">
+    <iframe class="container" src="{{place_detail.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <a href="{{place_detail.google_map_link}}" class="style-1">Go to Google Map</a>
+
+  </div>
+
+
+
+</div>
+
+
+    </div>
+
+
+  </div>
+  <div style="text-align:center;" class="dist">
+<h5> Distance from chikmagalur:{{place_detail.dist_from_ckm}}</h5>
+<h5>Distance from Bangalore:{{place_detail.dist_from_bang}}</h5>
+<h5>Distance from Mysore:{{place_detail.dist_from_mys}}</h5>
+  </div>
+  <div style="text-align:center;color:white;" class="container">
+    <iframe src="{{place_detail.three_view}}" width="500" height="420" style="" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+  </div>
+  <div class="alll">
+
+    <div id="leftie">
+      <a href="{% url 'basicapp:explores_list_view'%}" class="style-1">Back</a>
+    </div>
+
+    <div id="rightie">
+      <a href="{% url 'basicapp:home_view'%}" class="style-1"> Go to home page</a>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+<style media="screen">
+.box{
+  margin:40px;
+  padding:10px;
+  margin-bottom:20vw;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+}
+.cards-list {
+z-index: 0;
+width: 100%;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.card {
+margin: 30px auto;
+width: 80vw;
+height: inherit;
+border-radius: 10px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+cursor: pointer;
+background-color: black;
+transition: 0.4s;
+}
+
+.card .card_image {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+}
+
+.card .card_image img {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.card .card_title {
+text-align: center;
+border-radius: 0px 0px 40px 40px;
+
+font-weight: bold;
+font-size: 30px;
+margin-top: -80px;
+height: 40px;
+}
+
+.card:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.style-1 {
+  border:3px solid white;
+  color:white;
+
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
+}
+.style-1:hover {
+  background:#000;
+  border-color:white;
+  color:#fff;
+}
+.cus{
+  width: 100%;
+}
+.alll{
+  width:100%;
+  padding:20px;
+}
+#leftie{
+  float:left;
+}
+#rightie{
+  float:right;
+}
+</style>
+
+{%endblock%}

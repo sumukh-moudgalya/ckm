@@ -1,0 +1,179 @@
+{%extends 'html/base.html'%}
+{%load static%}
+
+{%block body_block%}
+<div class="box">
+  <h1> {{hotel.name}}  {% if hotel.veg%}<img style="width:4vw;height:4vw;" src="{%static 'icons/veg.jpg'%}" alt="">{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}
+  </h1>
+  <div  class="card 2">
+    <div class="card_image">
+      <img style="width:60vw;height:40vw;" src="{{hotel.thumbnail.url}}" alt="">
+
+     </div>
+
+  </div>
+  <h5>{{hotel.desc}}</h5>
+  <div class="side">
+    <div style="padding:20px;margin:20px;margin-bottom:20vw;" id="map">
+      <div style="width:100%;height:350px" class="d-md-none d-sm-block  mb-3">
+  <iframe style="align:center;margin:40px;" src="{{hotel.google_map_html}}" width="100%" height="225vw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <a style="text-align:center;" href="{{hotel.google_map_link}}" class="style-1">Go to Google Map</a>
+  </div>
+  <div style="width:100%;height:450px;text-align:center;" class="d-none d-md-block cus  mb-3">
+  <div  class="container">
+    <iframe class="container" src="{{hotel.google_map_html}}" width="900" height="600vw" frameborder="0" style="align:center;padding-left:5vw;;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <a href="{{hotel.google_link}}" class="style-1">Go to Google Map</a>
+
+  </div>
+
+
+
+  </div>
+
+
+    </div>
+
+
+  </div>
+  <div style="padding-bottom:18vw;margin:left:20px;" class="loop">
+    <div id="left">
+
+  <a href="{{hotel.google_link}}" class="style-1">{{hotel.google_rating}} <span class="fa fa-star checked"></span></a>
+
+    </div>
+    <div id="right">
+      <h4>{% if hotel.veg%}<img  style="width:4vw;height:4vw;text-align:right;font-size:36px;" src="{%static 'icons/veg.jpg'%}" alt="">Pure Vegetarian{%else%}<img style="width:4vw;height:4vw;" src="{%static 'icons/non_veg.png'%}" alt="">{%endif%}</h4>
+
+
+
+    </div>
+
+</div>
+</div>
+<style media="screen">
+.box{
+  margin:40px;
+  padding:10px;
+  margin-bottom:20vw;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+}
+.cards-list {
+z-index: 0;
+width: 100%;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.card {
+margin: 30px auto;
+width: 60vw;
+height: 40vw;
+border-radius: 10px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+cursor: pointer;
+background-color: black;
+transition: 0.4s;
+}
+
+.card .card_image {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+}
+
+.card .card_image img {
+width: inherit;
+height: inherit;
+border-radius: 10px;
+object-fit: cover;
+}
+
+.card .card_title {
+text-align: center;
+border-radius: 0px 0px 40px 40px;
+
+font-weight: bold;
+font-size: 30px;
+margin-top: -80px;
+height: 40px;
+}
+
+.card:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.style-1 {
+  border:3px solid white;
+  color:white;
+
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
+}
+.style-1:hover {
+  background:#000;
+  border-color:white;
+  color:#fff;
+}
+.cus{
+  width: 100%;
+}
+.alll{
+  width:100%;
+  padding:20px;
+}
+#leftie{
+  float:left;
+}
+#rightie{
+  float:right;
+}
+.loop{
+  width:100%;
+  padding:30px;
+
+}
+#left{
+  float:left;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+#left:hover {
+transform: scale(0.9, 0.9);
+box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+-5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+#right{
+  float:right;
+}
+.style-1 {
+  border:3px solid white;
+  color:white;
+
+  text-transform:uppercase;
+  padding:10px;
+  font-weight:600;
+  max-width:250px;
+  display:block;
+  text-align:center;
+  margin:10px auto;
+  position:relative;
+}
+.style-1:hover {
+  background:#000;
+  border-color:white;
+  color:#fff;
+}
+</style>
+
+
+{%endblock%}
